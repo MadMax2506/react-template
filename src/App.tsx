@@ -1,12 +1,12 @@
-import { Todo } from 'components/Todo/Todo';
 import { ThemeProvider } from 'context/ThemeContext/ThemeContext';
 import { CookiesProvider } from 'react-cookie';
+import { Routes } from 'routes/Routes';
 
 export const App = () => {
   return (
     <CookiesProvider>
       <ThemeProvider>
-        <Todo />
+        <Routes />
       </ThemeProvider>
     </CookiesProvider>
   );
