@@ -1,26 +1,14 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'plugin:react/recommended',
-  ],
+  root: true,
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    project: ["./tsconfig.json"]
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     eqeqeq: 2,
-    'import/no-default-export': 'error',
-    'import/no-extraneous-dependencies': 'off',
-    'import/no-unresolved': 'error',
-    'import/prefer-default-export': 'off',
+    "import/prefer-default-export": 0,
     'max-len': [
       'error',
       {
@@ -32,8 +20,15 @@ module.exports = {
       },
     ],
     'prettier/prettier': 2,
-    'react/jsx-props-no-spreading': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/require-default-props': 'off',
   },
+  "overrides": [
+    {
+      "files": [
+        "*.tsx",
+        "*.ts"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+      }
+    }]
 };

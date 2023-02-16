@@ -1,12 +1,10 @@
-import { CssBaseline, ScopedCssBaseline } from '@mui/material';
 import { Todo } from 'components/Todo/Todo';
+import { ThemeProvider } from 'context/ThemeContext/ThemeContext';
 
 export const App = () => {
-  /* <ThemeProvider theme={undefined}>*/
   return (
-    <ScopedCssBaseline>
-      <CssBaseline />
+    <ThemeProvider>
       <Todo />
-    </ScopedCssBaseline>
+    </ThemeProvider>
   );
 };
