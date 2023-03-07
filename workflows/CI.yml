@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    paths-ignore:
+      - ".github/**"
+      - ".husky/**"
+      - ".idea/**"
+      - "README.md"
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and test
+    if: "!contains(github.event.head_commit.message, 'WIP')"
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+    env:
+      NODE_ENV: "development"
+      NODE_OPTIONS: "--max_old_space_size=4096"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Setup
+        run: |
+          npm install
+      - name: Lint
+        run: |
+          npm run lint
+      - name: Test
+        run: |
+          npm run build
+          npm run test
