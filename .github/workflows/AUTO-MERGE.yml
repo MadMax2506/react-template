@@ -3,7 +3,6 @@ name: Automerge
 on:
   schedule:
     - cron: 0 12 * * *
-
   pull_request_target:
     types:
       - opened
@@ -13,22 +12,15 @@ on:
       - labeled
       - unlabeled
       - ready_for_review
-
-  workflow_dispatch:
-    inputs:
-      pull-request:
-        description: Pull Request Number
-        required: false
-
+  status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: reitermarkus/automerge@v2
-        with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: dependencies
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.6"
+        env:
+          GITHUB_TOKEN: "${{ secrets.MY_GITHUB_TOKEN }}"
+          MERGE_LABELS: "dependencies"
+          MERGE_METHOD: "merge"
