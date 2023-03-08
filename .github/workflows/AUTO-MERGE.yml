@@ -1,17 +1,7 @@
 name: Automerge
-
 on:
   schedule:
     - cron: 0 12 * * *
-  pull_request_target:
-    types:
-      - opened
-      - synchronized
-      - reopened
-      - edited
-      - labeled
-      - unlabeled
-      - ready_for_review
   status: {}
 jobs:
   automerge:
