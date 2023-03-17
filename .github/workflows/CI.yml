@@ -12,11 +12,24 @@ on:
     branches:
       - main
 
-jobs:
+jobs: 
+  dirty-pr-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check
+        uses: eps1lon/actions-label-merge-conflict@releases/2.x
+        with:
+          dirtyLabel: "merge-conflicts"
+          repoToken: ${{ secrets.MY_GITHUB_TOKEN }}
+          commentOnDirty: "This pull request has conflicts, please resolve those before we can evaluate the pull request."
+          retryMax: 1
+          
   build:
-    if: "!contains(github.event.head_commit.message, 'WIP')"
     name: Build and test
     runs-on: ubuntu-latest
+    needs: dirty-pr-check
+    if: "!contains(github.event.head_commit.message, 'WIP') && !contains(github.event.pull_request.labels.*.name, 'merge-conflicts') && needs.dirty-pr-check.result == 'success'"
 
     strategy:
       matrix:
@@ -44,12 +57,18 @@ jobs:
           npm run test
           
   auto-merge:
-    if: "contains(github.event.pull_request.labels.*.name, 'dependencies')"
     runs-on: ubuntu-latest
     needs: build
+    if: "contains(github.event.pull_request.labels.*.name, 'dependencies') && !contains(github.event.pull_request.labels.*.name, 'merge-conflicts')  && needs.build.result == 'success'"
+    
+    permissions:
+      contents: write
+      pull-requests: write
     
     steps:
       - name: Merge
         uses: tjenkinson/gh-action-auto-merge-dependency-updates@v1
         with:
+          repo-token: ${{ secrets.MY_GITHUB_TOKEN }}
+          allowed-update-types: devDependencies:minor, devDependencies:patch, dependencies:minor, dependencies:patch
           allowed-actors: MadMax2506, dependabot-preview[bot], dependabot[bot]
