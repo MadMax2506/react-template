@@ -1,24 +1,23 @@
 name: CI
 
+# Run if something is commited on `main` or there is still an open pulll request with `main` as target branch
 on:
   pull_request:
     branches:
       - main
   push:
     paths-ignore:
-      - ".github/**"
       - ".husky/**"
-      - ".idea/**"
       - "README.md"
     branches:
       - main
 
 jobs:
-  build:
+  build-and-test:
     name: Build and test
-    if: "!contains(github.event.head_commit.message, 'WIP')"
     runs-on: ubuntu-latest
 
+    # Configure npm env and strategies
     strategy:
       matrix:
         node-version: [ 16.x ]
@@ -26,21 +25,45 @@ jobs:
       NODE_ENV: "development"
       NODE_OPTIONS: "--max_old_space_size=4096"
 
+    # Checkout > Merge Conflict Check > Install > Lint > Test
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Merge Conflict Check
+        uses: olivernybroe/action-conflict-finder@v4.0
+      - name: Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
       - name: Setup
         run: |
           npm install
       - name: Lint
+        if: "!contains(github.event.head_commit.message, 'WIP')"
         run: |
           npm run lint
       - name: Test
+        if: "!contains(github.event.head_commit.message, 'WIP')"
         run: |
           npm run build
           npm run test
+      
+  auto-merge:
+    name: Auto-Merge
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    
+    # needed permissions for the job
+    permissions:
+      contents: write
+      pull-requests: write
+
+    
+    # Merge PR automatically if it is a pr created by the dependabot
+    steps:
+      - name: Auto-Merge
+        uses: fastify/github-action-merge-dependabot@v3.0.0
+        if: ${{ contains(github.event.*.labels.*.name, 'dependencies') && github.event_name == 'pull_request' && contains(github.event.*.labels.*.name, 'dependencies') }}
+        with:
+          merge-method: merge
+          github-token: ${{ secrets.MY_GITHUB_TOKEN }}
