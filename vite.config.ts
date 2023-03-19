@@ -10,4 +10,13 @@ interface VitestConfigExport extends UserConfig {
 
 export default defineConfig({
   plugins: [viteTsconfigPaths(), react(), svgr(), eslint()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.ts',
+    coverage: {
+      reporter: ['text', 'html'],
+      exclude: ['node_modules/', 'src/setupTests.ts'],
+    },
+  },
 } as VitestConfigExport);
