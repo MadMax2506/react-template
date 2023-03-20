@@ -62,7 +62,7 @@ jobs:
     # Merge PR automatically if it is a pr created by the dependabot
     steps:
       - name: Auto-Merge
-        uses: fastify/github-action-merge-dependabot@v3.0.0
+        uses: fastify/github-action-merge-dependabot@v3.6.2
         if: ${{ contains(github.event.*.labels.*.name, 'dependencies') && github.event_name == 'pull_request' && contains(github.event.*.labels.*.name, 'dependencies') }}
         with:
           merge-method: merge
