@@ -20,6 +20,15 @@ module.exports = {
       },
     ],
     'prettier/prettier': 2,
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ]
   },
   "overrides": [
     {
