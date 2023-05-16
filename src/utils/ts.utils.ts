@@ -6,7 +6,7 @@ export type ReadonlyUnpacked<T> = T extends readonly (infer U)[] ? U : T;
 
 export type Maybe<T> = T | null;
 export type NotMaybe<T> = Exclude<T, undefined | null>;
-export type Compact<T extends any[] | undefined | null> = Array<NotMaybe<Unpacked<T>>>;
+export type Compact<T extends never[] | undefined | null> = Array<NotMaybe<Unpacked<T>>>;
 
 /**
  * Makes all fields in an object required, recursively
