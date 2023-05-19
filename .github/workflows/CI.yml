@@ -64,6 +64,10 @@ jobs:
         if: "!contains(github.event.head_commit.message, 'WIP')"
         run: |
           pnpm lint
+      - name: Typecheck
+        if: "!contains(github.event.head_commit.message, 'WIP')"
+        run: |
+          pnpm typecheck
       - name: Test
         if: "!contains(github.event.head_commit.message, 'WIP')"
         run: |
@@ -74,7 +78,6 @@ jobs:
     name: Dependabot
     runs-on: ubuntu-latest
     needs: [ build-and-test ]
-
     if: ${{ contains(github.event.*.labels.*.name, 'dependencies') }}
 
     steps:
