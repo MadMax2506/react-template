@@ -14,8 +14,8 @@ dependencies:
     specifier: ^5.12.3
     version: 5.12.3(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.6)(react-dom@18.2.0)(react@18.2.0)
   '@mui/x-date-pickers':
-    specifier: ^6.3.1
-    version: 6.3.1(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.128)(@mui/material@5.12.3)(@mui/system@5.12.3)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^6.7.0
+    version: 6.7.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.128)(@mui/material@5.12.3)(@mui/system@5.12.3)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0)
   '@types/lodash':
     specifier: ^4.14.194
     version: 4.14.194
@@ -743,7 +743,7 @@ packages:
       '@babel/runtime': 7.21.5
       '@emotion/is-prop-valid': 1.2.1
       '@mui/types': 7.2.4(@types/react@18.2.6)
-      '@mui/utils': 5.12.3(react@18.2.0)
+      '@mui/utils': 5.13.1(react@18.2.0)
       '@popperjs/core': 2.11.7
       '@types/react': 18.2.6
       clsx: 1.2.1
@@ -821,7 +821,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.21.5
-      '@mui/utils': 5.12.3(react@18.2.0)
+      '@mui/utils': 5.13.1(react@18.2.0)
       '@types/react': 18.2.6
       prop-types: 15.8.1
       react: 18.2.0
@@ -871,7 +871,7 @@ packages:
       '@mui/private-theming': 5.12.3(@types/react@18.2.6)(react@18.2.0)
       '@mui/styled-engine': 5.12.3(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
       '@mui/types': 7.2.4(@types/react@18.2.6)
-      '@mui/utils': 5.12.3(react@18.2.0)
+      '@mui/utils': 5.13.1(react@18.2.0)
       '@types/react': 18.2.6
       clsx: 1.2.1
       csstype: 3.1.2
@@ -904,8 +904,22 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/x-date-pickers@6.3.1(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.128)(@mui/material@5.12.3)(@mui/system@5.12.3)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-YPQrsi10rpeEUJkp77NkHqkcZbzAAWITl3MZJ8Mv8ZiS9MEFKmr2kU+SPWUomDByor2UlaS9EmvtslQW74hiWg==}
+  /@mui/utils@5.13.1(react@18.2.0):
+    resolution: {integrity: sha512-6lXdWwmlUbEU2jUI8blw38Kt+3ly7xkmV9ljzY4Q20WhsJMWiNry9CX8M+TaP/HbtuyR8XKsdMgQW7h7MM3n3A==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.21.5
+      '@types/prop-types': 15.7.5
+      '@types/react-is': 18.2.0
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-is: 18.2.0
+    dev: false
+
+  /@mui/x-date-pickers@6.7.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.128)(@mui/material@5.12.3)(@mui/system@5.12.3)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Nf1wpBKp1DHS4gSrPXbxUfEBSVeqxVuZqJRh8oqreBG4ogZ8Sas3QpWIMGehpjmBjMXGyeWl0RUlTyUwMwhdng==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@emotion/react': ^11.9.0
@@ -920,8 +934,8 @@ packages:
       moment: ^2.29.4
       moment-hijri: ^2.1.2
       moment-jalaali: ^0.7.4 || ^0.8.0 || ^0.9.0 || ^0.10.0
-      react: ^17.0.2 || ^18.0.0
-      react-dom: ^17.0.2 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
     peerDependenciesMeta:
       '@emotion/react':
         optional: true
@@ -948,7 +962,7 @@ packages:
       '@mui/base': 5.0.0-alpha.128(@types/react@18.2.6)(react-dom@18.2.0)(react@18.2.0)
       '@mui/material': 5.12.3(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.6)(react-dom@18.2.0)(react@18.2.0)
       '@mui/system': 5.12.3(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.6)(react@18.2.0)
-      '@mui/utils': 5.12.3(react@18.2.0)
+      '@mui/utils': 5.13.1(react@18.2.0)
       '@types/react-transition-group': 4.4.6
       clsx: 1.2.1
       dayjs: 1.11.7
@@ -1328,6 +1342,12 @@ packages:
     resolution: {integrity: sha512-FLzd0K9pnaEvKz4D1vYxK9JmgQPiGk1lu23o1kqGsLeT0iPbRSF7b76+S5T9fD8aRa0B8bY7I/3DebEj+1ysBA==}
     dependencies:
       '@types/react': 17.0.59
+    dev: false
+
+  /@types/react-is@18.2.0:
+    resolution: {integrity: sha512-1vz2yObaQkLL7YFe/pme2cpvDsCwI1WXIfL+5eLz0MI9gFG24Re16RzUsI8t9XZn9ZWvgLNDrJBmrqXJO7GNQQ==}
+    dependencies:
+      '@types/react': 18.2.6
     dev: false
 
   /@types/react-router-dom@5.3.3:
