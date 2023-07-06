@@ -16,13 +16,16 @@ npm install
 Start the app in the `dev` environment:
 
 ```bash
-npm run dev
+pnpm i
+pnpm start:dev
 ```
 
-## :computer: Packaging for Production
+## :computer: Starting Production
 
-To package apps for the local platform:
+Start the app in the `prod` environment:
 
 ```bash
-npm run build
+pnpm i
+pnpm build
+pnpm start:prod
 ```
