@@ -5,7 +5,8 @@ Clone the repo and install dependencies:
 ```bash
 git clone --depth 1 --branch main git@github.com:MadMax2506/react-template.git your-project-name
 cd your-project-name
-npm install
+npm i -g pnpm vite
+pnpm i
 ```
 
 * Adjust custom settings in `index.html`
