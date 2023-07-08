@@ -1,15 +1,35 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "Start Development",
-            "command": "pnpm start:dev",
-        },
-        {
-            "type": "shell",
-            "label": "Start Production",
-            "command": "pnpm start:prod"
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Start Development",
+      "command": "pnpm start:dev"
+    },
+    {
+      "type": "shell",
+      "label": "Start Production",
+      "command": "pnpm start:prod"
+    },
+    {
+      "type": "shell",
+      "label": "Lint",
+      "command": "pnpm lintfix"
+    },
+    {
+      "type": "shell",
+      "label": "Typecheck",
+      "command": "pnpm typecheck"
+    },
+    {
+      "type": "shell",
+      "label": "Test",
+      "command": "pnpm test"
+    },
+    {
+      "type": "shell",
+      "label": "CI",
+      "command": "pnpm lintfix && pnpm typecheck && pnpm test"
+    }
+  ]
 }
