@@ -2,17 +2,18 @@ name: CI
 
 # Run if something is commited on `main` or there is still an open pulll request with `main` as target branch
 on:
+  workflow_call:
   pull_request:
     branches:
       - main
   push:
     paths-ignore:
-      - ".husky/**"
-      - "public/**"
-      - "index.html"
-      - ".gitignore"
-      - "LICENSE"
-      - "README.md"
+      - '.husky/**'
+      - 'public/**'
+      - 'index.html'
+      - '.gitignore'
+      - 'LICENSE'
+      - 'README.md'
     branches:
       - main
 
@@ -24,10 +25,10 @@ jobs:
     # Configure npm env and strategies
     strategy:
       matrix:
-        node-version: [ 16.x ]
+        node-version: [16.x]
     env:
-      NODE_ENV: "development"
-      NODE_OPTIONS: "--max_old_space_size=4096"
+      NODE_ENV: 'development'
+      NODE_OPTIONS: '--max_old_space_size=4096'
 
     # Checkout > Merge Conflict Check > Install > Lint > Test
     steps:
@@ -61,15 +62,15 @@ jobs:
         run: |
           pnpm install --no-frozen-lockfile
       - name: Lint
-        if: "!contains(github.event.head_commit.message, 'WIP')"
+        if: ${{ !contains(github.event.head_commit.message, 'WIP') }}
         run: |
           pnpm lint
       - name: Typecheck
-        if: "!contains(github.event.head_commit.message, 'WIP')"
+        if: ${{ !contains(github.event.head_commit.message, 'WIP') }}
         run: |
           pnpm typecheck
       - name: Test
-        if: "!contains(github.event.head_commit.message, 'WIP')"
+        if: ${{ !contains(github.event.head_commit.message, 'WIP') }}
         run: |
           pnpm build
           pnpm test
