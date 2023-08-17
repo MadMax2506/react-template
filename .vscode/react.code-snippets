@@ -43,13 +43,13 @@
 		"scope": "javascriptreact,typescriptreact,javascript,typescript",
 		"prefix": "react-hook",
 		"body": [
-			"type ${TM_FILENAME_BASE}Props = {$1};",
-			"type ${TM_FILENAME_BASE}Return = {$2};",
-			"",
+			"type ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props = {$1};",
+			"type ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Return = {$2};",
+			"",  
 			"export const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props): ${TM_FILENAME_BASE}Return => {",
 			"  const {$3} = props;",
 			"  return {$4};",
-			"};",
+			"};", 
 			""
 		],
 		"description": "Custom React Hook"
@@ -60,7 +60,7 @@
 		"body": [
 			"export const ${TM_FILENAME_BASE} = (): JSX.Element => {",
 			"  return <>${TM_FILENAME_BASE}</>;",
-			"};",
+			"};", 
 			""
 		],
 		"description": "React Router Page"
