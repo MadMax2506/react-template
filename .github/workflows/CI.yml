@@ -55,7 +55,7 @@ jobs:
           run_install: false
       - run: pnpm config set store-dir .pnpm-store
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm typecheck
+      - run: pnpm type:check
   lint:
     needs: install
     runs-on: ${{ needs.install.outputs.os }}

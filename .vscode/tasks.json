@@ -19,7 +19,7 @@
     {
       "type": "shell",
       "label": "Typecheck",
-      "command": "pnpm typecheck"
+      "command": "pnpm type:check"
     },
     {
       "type": "shell",
@@ -29,7 +29,7 @@
     {
       "type": "shell",
       "label": "CI",
-      "command": "pnpm lintfix && pnpm typecheck && pnpm test"
+      "command": "pnpm lintfix && pnpm type:check && pnpm test"
     }
   ]
 }
