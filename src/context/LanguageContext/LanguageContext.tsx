@@ -2,10 +2,14 @@
 import 'dayjs/locale/de';
 import 'dayjs/locale/en';
 // END: DONT REMOVE THE FOLLOWING IMPORTS
-import { deDE as muiMaterialDE, enUS as muiMaterialEN, Localization } from '@mui/material/locale';
-import { createContext, PropsWithChildren, useContext, useEffect, useMemo } from 'react';
-import { deLocales, enLocales } from './locales';
-import { flatJsonObject } from 'utils';
+import { Localization, deDE as muiMaterialDE, enUS as muiMaterialEN } from '@mui/material/locale';
+import {
+  LocalizationProvider,
+  PickersLocaleText,
+  deDE as muiDatePickersDE,
+  enUS as muiDatePickersEN,
+} from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import {
   ChangeLanguageFunction,
   LanguageConfiguration,
@@ -13,15 +17,11 @@ import {
   TextKeyArg,
   TextKeyFunction,
 } from 'context/LanguageContext/language.types';
-import { useCookies } from 'react-cookie';
-import {
-  deDE as muiDatePickersDE,
-  enUS as muiDatePickersEN,
-  LocalizationProvider,
-  PickersLocaleText,
-} from '@mui/x-date-pickers';
 import dayjs, { Dayjs } from 'dayjs';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { PropsWithChildren, createContext, useContext, useEffect, useMemo } from 'react';
+import { useCookies } from 'react-cookie';
+import { flatJsonObject } from 'utils';
+import { deLocales, enLocales } from './locales';
 
 type Language = {
   /**
@@ -48,7 +48,7 @@ type Language = {
 
 const DEFAULT_LANGUAGE = LanguageConfiguration.DE;
 
-const LanguageContext = createContext<Language>({} as Language);
+const LanguageContext = createContext<Language | undefined>(undefined);
 
 export const LanguageProvider = (props: PropsWithChildren) => {
   const { children } = props;
@@ -148,7 +148,7 @@ export const LanguageProvider = (props: PropsWithChildren) => {
 };
 
 export const useLanguageContext = (): Language => {
-  const context = useContext<Language>(LanguageContext);
+  const context = useContext<Language | undefined>(LanguageContext);
   if (context === undefined) {
     throw new Error('useLanguageContext must be used within a LanguageProvider');
   }
