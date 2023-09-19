@@ -18,8 +18,8 @@ dependencies:
     specifier: ^5.14.8
     version: 5.14.8(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
   '@mui/x-date-pickers':
-    specifier: ^6.13.0
-    version: 6.13.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.8)(@mui/system@5.14.8)(@types/react@18.2.22)(dayjs@1.11.9)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^6.14.0
+    version: 6.14.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.8)(@mui/system@5.14.8)(@types/react@18.2.22)(dayjs@1.11.9)(react-dom@18.2.0)(react@18.2.0)
   '@types/lodash':
     specifier: ^4.14.198
     version: 4.14.198
@@ -872,31 +872,6 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
-  /@mui/base@5.0.0-beta.13(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-uC0l97pBspfDAp+iz2cJq8YZ8Sd9i73V77+WzUiOAckIVEyCm5dyVDZCCO2/phmzckVEeZCGcytybkjMQuhPQw==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.22.15
-      '@emotion/is-prop-valid': 1.2.1
-      '@floating-ui/react-dom': 2.0.1(react-dom@18.2.0)(react@18.2.0)
-      '@mui/types': 7.2.4(@types/react@18.2.22)
-      '@mui/utils': 5.14.7(react@18.2.0)
-      '@popperjs/core': 2.11.8
-      '@types/react': 18.2.22
-      clsx: 2.0.0
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-is: 18.2.0
-    dev: false
-
   /@mui/base@5.0.0-beta.14(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Je/9JzzYObsuLCIClgE8XvXNFb55IEz8n2NtStUfASfNiVrwiR8t6VVFFuhofehkyTIN34tq1qbBaOjCnOovBw==}
     engines: {node: '>=12.0.0'}
@@ -1059,20 +1034,6 @@ packages:
       '@types/react': 18.2.22
     dev: false
 
-  /@mui/utils@5.14.7(react@18.2.0):
-    resolution: {integrity: sha512-RtheP/aBoPogVdi8vj8Vo2IFnRa4mZVmnD0RGlVZ49yF60rZs+xP4/KbpIrTr83xVs34QmHQ2aQ+IX7I0a0dDw==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@babel/runtime': 7.22.15
-      '@types/prop-types': 15.7.5
-      '@types/react-is': 18.2.1
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-is: 18.2.0
-    dev: false
-
   /@mui/utils@5.14.8(react@18.2.0):
     resolution: {integrity: sha512-1Ls2FfyY2yVSz9NEqedh3J8JAbbZAnUWkOWLE2f4/Hc4T5UWHMfzBLLrCqExfqyfyU+uXYJPGeNIsky6f8Gh5Q==}
     engines: {node: '>=12.0.0'}
@@ -1087,8 +1048,8 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/x-date-pickers@6.13.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.8)(@mui/system@5.14.8)(@types/react@18.2.22)(dayjs@1.11.9)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-mNfWXrS9PMLI+lgeEw6R08g5j1Yewat+A7MiI2QuwZteX3b83JQnm73RCGrSFTpvOP1/v6yIBPbxPZin5eu6GA==}
+  /@mui/x-date-pickers@6.14.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.8)(@mui/system@5.14.8)(@types/react@18.2.22)(dayjs@1.11.9)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-vgVEMGrm6FISD0vVTnrShwWYB6IoaXSRZogwwgF5ruKjtxwKifXNk7d6836uVo/Mv2TSKYBMk1dVwl6gand6DQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@emotion/react': ^11.9.0
@@ -1127,10 +1088,10 @@ packages:
       '@babel/runtime': 7.22.15
       '@emotion/react': 11.11.1(@types/react@18.2.22)(react@18.2.0)
       '@emotion/styled': 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.22)(react@18.2.0)
-      '@mui/base': 5.0.0-beta.13(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/base': 5.0.0-beta.14(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
       '@mui/material': 5.14.8(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
       '@mui/system': 5.14.8(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.22)(react@18.2.0)
-      '@mui/utils': 5.14.7(react@18.2.0)
+      '@mui/utils': 5.14.8(react@18.2.0)
       '@types/react-transition-group': 4.4.6
       clsx: 2.0.0
       dayjs: 1.11.9
