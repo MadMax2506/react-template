@@ -18,7 +18,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.12",
-    "@mui/x-date-pickers": "^6.15.0",
+    "@mui/x-date-pickers": "^6.16.1",
     "@types/lodash": "^4.14.199",
     "dayjs": "^1.11.10",
     "lodash": "^4.17.21",
