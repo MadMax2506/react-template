@@ -1,5 +1,5 @@
 import { Home } from '@pages/Home';
-import { Route as ReactRoute, Routes as ReactRoutes, BrowserRouter as Router } from 'react-router-dom';
+import { Navigate, Route as ReactRoute, Routes as ReactRoutes, BrowserRouter as Router } from 'react-router-dom';
 import { paths } from './paths';
 
 export function Routes(): JSX.Element {
@@ -7,7 +7,7 @@ export function Routes(): JSX.Element {
     <Router>
       <ReactRoutes>
         {/** Public routes */}
-        <ReactRoute path="*" element={<h1>Page not found</h1>} />
+        <ReactRoute path="*" element={<Navigate to={paths.root.pattern} />} />
         <ReactRoute index path={paths.root.pattern} element={<Home />} />
       </ReactRoutes>
     </Router>
