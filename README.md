@@ -9,8 +9,9 @@ npm i -g pnpm vite
 pnpm i
 ```
 
-* Adjust custom settings in `index.html`
-* Replace `<USER>` and `<PROJECT>` in `src/renderer/components/Todo/TodoLink.tsx` with the related GitHub information
+- Adjust custom settings in `index.html`
+- Adjust app name in `src\context\LanguageContext\locales`
+- Replace `<USER>` and `<PROJECT>` in `src/renderer/components/Todo/TodoLink.tsx` with the related GitHub information
 
 ## :nut_and_bolt: Starting Development
 
