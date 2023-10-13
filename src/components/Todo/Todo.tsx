@@ -3,27 +3,15 @@ import { PropsWithChildren } from 'react';
 import { TodoLink } from './TodoLink';
 import { TodoTitle } from './TodoTitle';
 
-/**
- * Props for {@link Todo}
- */
 type TodoProps = {
-  /**
-   * Title for the todo
-   */
   title?: string;
-  /**
-   * ID of the ticket
-   */
   ticketId?: number;
 };
 
-/**
- * @param props {@link TodoProps}
- */
 export function Todo(props: PropsWithChildren<TodoProps>): JSX.Element | null {
   const theme = useTheme();
 
-  /* don't do anything on non-dev or testing environements */
+  // don't do anything on non-dev or testing environements
   if (import.meta.env.PROD) return null;
 
   const { ticketId, children, title } = props;

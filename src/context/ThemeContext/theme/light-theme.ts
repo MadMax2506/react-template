@@ -7,9 +7,6 @@ const scrollbarGrey = {
   300: '#a8a8a8',
 };
 
-/**
- * Light theme
- */
 export const lightTheme = createTheme({
   ...generalSettings,
   components: {

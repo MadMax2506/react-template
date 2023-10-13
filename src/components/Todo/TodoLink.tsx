@@ -1,9 +1,6 @@
 import { Link } from '@mui/material';
 import { PropsWithChildren, ReactNode, useMemo } from 'react';
 
-/**
- * Props for {@link TodoLink}
- */
 type TodoLinkProps = PropsWithChildren<
   | {
       type: 'default' | never;
@@ -15,9 +12,6 @@ type TodoLinkProps = PropsWithChildren<
     }
 >;
 
-/**
- * Generate link to the issue
- */
 function getLinkData(props: TodoLinkProps): [string, ReactNode] {
   switch (props.type) {
     case 'ticket':
@@ -28,10 +22,6 @@ function getLinkData(props: TodoLinkProps): [string, ReactNode] {
   }
 }
 
-/**
- * Display link for the issue
- * @param props {@link TodoLinkProps}
- */
 export function TodoLink(props: TodoLinkProps): JSX.Element {
   const [link, label] = useMemo(() => getLinkData(props), [props]);
 
