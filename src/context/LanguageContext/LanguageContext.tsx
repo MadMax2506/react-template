@@ -24,7 +24,7 @@ import {
 import { deLocales, enLocales } from './locales';
 
 type Language = {
-  t: TextKeyFunction;
+  translate: TextKeyFunction;
   language: LanguageConfiguration;
   languageTag: LanguageTag;
   muiLocale: Localization;
@@ -56,7 +56,7 @@ export const LanguageProvider = (props: PropsWithChildren) => {
     }
   }, [language]);
 
-  const t: TextKeyFunction = (key, args?: TextKeyArg[]) => {
+  const translate: TextKeyFunction = (key, args?: TextKeyArg[]) => {
     const text = (language === LanguageConfiguration.DE ? flatDeLocales : flatEnLocales)[key];
 
     if (!text) return key;
@@ -114,7 +114,7 @@ export const LanguageProvider = (props: PropsWithChildren) => {
   return (
     <LanguageContext.Provider
       value={{
-        t,
+        translate,
         language: language ?? DEFAULT_LANGUAGE,
         languageTag: currentLanguageTag(),
         muiLocale: currentMuiLocale(),

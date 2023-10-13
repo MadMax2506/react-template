@@ -18,10 +18,10 @@ export const App = () => {
 };
 
 export const MetaData = () => {
-  const { language, t } = useLanguageContext();
+  const { language, translate } = useLanguageContext();
   return (
     <Helmet htmlAttributes={{ lang: language }}>
-      <title>{t('meta.title')}</title>
+      <title>{translate('meta.title')}</title>
     </Helmet>
   );
 };
