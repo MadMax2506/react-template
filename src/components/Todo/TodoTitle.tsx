@@ -1,9 +1,6 @@
 import { Typography } from '@mui/material';
 import { PropsWithChildren } from 'react';
 
-/**
- * Display title of the todo
- */
 export function TodoTitle(props: PropsWithChildren): JSX.Element {
   const { children } = props;
 

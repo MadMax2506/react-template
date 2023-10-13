@@ -24,25 +24,10 @@ import {
 import { deLocales, enLocales } from './locales';
 
 type Language = {
-  /**
-   * Translation function
-   */
   t: TextKeyFunction;
-  /**
-   * Current language
-   */
   language: LanguageConfiguration;
-  /**
-   * Current language tag
-   */
   languageTag: LanguageTag;
-  /**
-   * Current locale for mui
-   */
   muiLocale: Localization;
-  /**
-   * Update the current language
-   */
   changeLanguage: ChangeLanguageFunction;
 };
 
@@ -130,7 +115,7 @@ export const LanguageProvider = (props: PropsWithChildren) => {
     <LanguageContext.Provider
       value={{
         t,
-        language: language || DEFAULT_LANGUAGE,
+        language: language ?? DEFAULT_LANGUAGE,
         languageTag: currentLanguageTag(),
         muiLocale: currentMuiLocale(),
         changeLanguage,
