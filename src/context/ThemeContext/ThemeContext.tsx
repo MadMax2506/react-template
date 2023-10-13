@@ -1,6 +1,5 @@
 import { CssBaseline, ThemeProvider as MuiThemeProvider, PaletteMode, ScopedCssBaseline } from '@mui/material';
-import { darkTheme } from 'context/ThemeContext/theme/dark-theme';
-import { lightTheme } from 'context/ThemeContext/theme/light-theme';
+import { darkTheme, lightTheme } from './theme';
 import { JSX, PropsWithChildren, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useCookies } from 'react-cookie';
 

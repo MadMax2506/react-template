@@ -1,4 +1,4 @@
-import { useLanguageContext } from 'context/LanguageContext/LanguageContext';
+import { useLanguageContext } from '@context/LanguageContext';
 
 export type DateOptions = {
   year?: 'numeric' | '2-digit';

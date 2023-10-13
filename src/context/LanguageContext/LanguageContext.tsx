@@ -10,17 +10,17 @@ import {
   enUS as muiDatePickersEN,
 } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { flatJsonObject } from '@utils';
+import dayjs, { Dayjs } from 'dayjs';
+import { PropsWithChildren, createContext, useContext, useEffect, useMemo } from 'react';
+import { useCookies } from 'react-cookie';
 import {
   ChangeLanguageFunction,
   LanguageConfiguration,
   LanguageTag,
   TextKeyArg,
   TextKeyFunction,
-} from 'context/LanguageContext/language.types';
-import dayjs, { Dayjs } from 'dayjs';
-import { PropsWithChildren, createContext, useContext, useEffect, useMemo } from 'react';
-import { useCookies } from 'react-cookie';
-import { flatJsonObject } from 'utils';
+} from './language.types';
 import { deLocales, enLocales } from './locales';
 
 type Language = {
