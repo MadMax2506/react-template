@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { components, generalSettings, palette } from 'context/ThemeContext/theme/theme-options';
+import { components, generalSettings, palette } from './theme-options';
 
 const scrollbarGrey = {
   100: '#959595',

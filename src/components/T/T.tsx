@@ -1,6 +1,5 @@
-import { useLanguageContext } from 'context/LanguageContext/LanguageContext';
-import { TextKey } from 'types';
-import { TextKeyArg } from 'context/LanguageContext/language.types';
+import { TextKeyArg, useLanguageContext } from '@context/LanguageContext';
+import { TextKey } from '@types';
 
 type TProps = {
   /**

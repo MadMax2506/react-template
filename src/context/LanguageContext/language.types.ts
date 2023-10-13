@@ -1,4 +1,4 @@
-import { TextKey } from 'types';
+import { TextKey } from '@types';
 
 export enum LanguageConfiguration {
   DE = 'de',

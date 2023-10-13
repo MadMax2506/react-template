@@ -1,4 +1,4 @@
-import { FlatJSONObject, JSONObject } from 'types/json.types';
+import { FlatJSONObject, JSONObject } from '@types';
 
 export function flatJsonObject(obj: JSONObject) {
   const res: FlatJSONObject = {};

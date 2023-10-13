@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Route as ReactRoute, Routes as ReactRoutes } from 'react-router-dom';
+import { Home } from '@pages/Home';
+import { Route as ReactRoute, Routes as ReactRoutes, BrowserRouter as Router } from 'react-router-dom';
 import { paths } from './paths';
-import { Home } from 'pages/Home/Home';
 
 export function Routes(): JSX.Element {
   return (

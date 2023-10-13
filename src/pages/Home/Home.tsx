@@ -1,5 +1,5 @@
+import { T } from '@components/T';
 import { Box, Container } from '@mui/material';
-import { T } from 'components/T/T';
 
 export const Home = (): JSX.Element => {
   return (
