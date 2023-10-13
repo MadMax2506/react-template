@@ -10,7 +10,7 @@ type TProps = {
 export const T = (props: TProps): JSX.Element => {
   const { textKey, as: CustomTag = 'span', args } = props;
 
-  const { t } = useLanguageContext();
+  const { translate: t } = useLanguageContext();
 
   return <CustomTag>{t(textKey, args)}</CustomTag>;
 };
