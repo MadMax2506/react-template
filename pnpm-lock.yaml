@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^0.1.1
     version: 0.1.1
   '@types/react-dom':
-    specifier: ^18.2.11
-    version: 18.2.11
+    specifier: ^18.2.13
+    version: 18.2.13
   '@types/react-helmet':
     specifier: ^6.1.7
     version: 6.1.7
@@ -1244,7 +1244,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.5
       '@testing-library/dom': 9.2.0
-      '@types/react-dom': 18.2.11
+      '@types/react-dom': 18.2.13
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
@@ -1399,8 +1399,8 @@ packages:
       '@types/express': 4.17.17
     dev: true
 
-  /@types/react-dom@18.2.11:
-    resolution: {integrity: sha512-zq6Dy0EiCuF9pWFW6I6k6W2LdpUixLE4P6XjXU1QHLfak3GPACQfLwEuHzY5pOYa4hzj1d0GxX/P141aFjZsyg==}
+  /@types/react-dom@18.2.13:
+    resolution: {integrity: sha512-eJIUv7rPP+EC45uNYp/ThhSpE16k22VJUknt5OLoH9tbXoi8bMhwLf5xRuWMywamNbWzhrSmU7IBJfPup1+3fw==}
     dependencies:
       '@types/react': 18.2.25
     dev: true
