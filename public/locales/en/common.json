@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "React-Template"
+  },
+  "menu": {
+    "home": "Home"
+  },
+  "errors": {
+    "generic": {
+      "title": "Opps!",
+      "message": {
+        "part1": "We are sincerely sorry that we are currently unable to show you the content you requested. Our team is working hard to make the site available again as soon as possible.",
+        "part2": "We apologise for any inconvenience this may cause you. Please try again at a later date.",
+        "part3": "If the problem persists or you need additional support, please feel free to contact our customer service at"
+      }
+    }
+  }
+}

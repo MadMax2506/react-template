@@ -10,73 +10,28 @@ import {
   enUS as muiDatePickersEN,
 } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { flatJsonObject } from '@utils';
+import { LanguageConfiguration, LanguageTag } from '@types';
 import dayjs, { Dayjs } from 'dayjs';
-import { PropsWithChildren, createContext, useContext, useEffect, useMemo } from 'react';
-import { useCookies } from 'react-cookie';
-import {
-  ChangeLanguageFunction,
-  LanguageConfiguration,
-  LanguageTag,
-  TextKeyArg,
-  TextKeyFunction,
-} from './language.types';
-import { deLocales, enLocales } from './locales';
+import { PropsWithChildren, createContext, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type Language = {
-  t: TextKeyFunction;
-  language: LanguageConfiguration;
   languageTag: LanguageTag;
   muiLocale: Localization;
-  changeLanguage: ChangeLanguageFunction;
 };
-
-const DEFAULT_LANGUAGE = LanguageConfiguration.DE;
 
 const LanguageContext = createContext<Language | undefined>(undefined);
 
 export const LanguageProvider = (props: PropsWithChildren) => {
   const { children } = props;
+  const {
+    i18n: { language },
+  } = useTranslation();
 
-  const [{ language }, setCookie] = useCookies<
-    'language',
-    {
-      language: LanguageConfiguration | undefined;
-    }
-  >(['language']);
-
-  const flatDeLocales = useMemo(() => flatJsonObject(deLocales), []);
-  const flatEnLocales = useMemo(() => flatJsonObject(enLocales), []);
-
-  useEffect(() => {
-    if (language) {
-      dayjs().locale(language);
-    } else {
-      changeLanguage(DEFAULT_LANGUAGE);
-    }
-  }, [language]);
-
-  const t: TextKeyFunction = (key, args?: TextKeyArg[]) => {
-    const text = (language === LanguageConfiguration.DE ? flatDeLocales : flatEnLocales)[key];
-
-    if (!text) return key;
-    const textStr = text as string;
-
-    if (args) {
-      let textWithArgs = textStr;
-      args.forEach((arg, index) => {
-        textWithArgs = textWithArgs.replace(`{${index}}`, `${arg}`);
-      });
-      return textWithArgs;
-    }
-
-    return textStr;
-  };
-
-  const changeLanguage: ChangeLanguageFunction = (language) => setCookie('language', language);
+  const currentLanguage = language as LanguageConfiguration;
 
   const currentLanguageTag = (): LanguageTag => {
-    switch (language) {
+    switch (currentLanguage) {
       case LanguageConfiguration.DE:
         return LanguageTag.DE_DE;
       default:
@@ -85,7 +40,7 @@ export const LanguageProvider = (props: PropsWithChildren) => {
   };
 
   const currentMuiLocale = (): Localization => {
-    switch (language) {
+    switch (currentLanguage) {
       case LanguageConfiguration.DE:
         return muiMaterialDE;
       default:
@@ -94,7 +49,7 @@ export const LanguageProvider = (props: PropsWithChildren) => {
   };
 
   const currentDayJsLocale = (): string => {
-    switch (language) {
+    switch (currentLanguage) {
       case LanguageConfiguration.DE:
         return dayjs.locale('de');
       default:
@@ -102,23 +57,20 @@ export const LanguageProvider = (props: PropsWithChildren) => {
     }
   };
 
-  function currentMuiDatePickerLocaleTexts(): Partial<PickersLocaleText<Dayjs>> {
-    switch (language) {
+  const currentMuiDatePickerLocaleTexts = (): Partial<PickersLocaleText<Dayjs>> => {
+    switch (currentLanguage) {
       case LanguageConfiguration.DE:
         return muiDatePickersDE.components.MuiLocalizationProvider.defaultProps.localeText;
       default:
         return muiDatePickersEN.components.MuiLocalizationProvider.defaultProps.localeText;
     }
-  }
+  };
 
   return (
     <LanguageContext.Provider
       value={{
-        t,
-        language: language ?? DEFAULT_LANGUAGE,
         languageTag: currentLanguageTag(),
         muiLocale: currentMuiLocale(),
-        changeLanguage,
       }}
     >
       <LocalizationProvider
