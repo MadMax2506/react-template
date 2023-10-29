@@ -1,7 +1,8 @@
 import { Box, Container } from '@mui/material';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const Home = (): JSX.Element => {
+export const Home: FC = () => {
   const { t } = useTranslation();
 
   return (
