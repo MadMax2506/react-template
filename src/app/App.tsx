@@ -7,20 +7,18 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-export const App = () => {
-  return (
-    <CookiesProvider>
-      <LanguageProvider>
-        <ErrorBoundary FallbackComponent={ErrorFallbackPageProps}>
-          <ThemeProvider>
-            <MetaData />
-            <Routes />
-          </ThemeProvider>
-        </ErrorBoundary>
-      </LanguageProvider>
-    </CookiesProvider>
-  );
-};
+export const App = () => (
+  <CookiesProvider>
+    <LanguageProvider>
+      <ErrorBoundary FallbackComponent={ErrorFallbackPageProps}>
+        <ThemeProvider>
+          <MetaData />
+          <Routes />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </LanguageProvider>
+  </CookiesProvider>
+);
 
 export const MetaData = () => {
   const {

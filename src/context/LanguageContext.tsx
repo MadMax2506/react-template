@@ -12,7 +12,7 @@ import {
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LanguageConfiguration, LanguageTag } from '@types';
 import dayjs, { Dayjs } from 'dayjs';
-import { PropsWithChildren, createContext, useContext } from 'react';
+import { FC, PropsWithChildren, createContext, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 type Language = {
@@ -22,7 +22,7 @@ type Language = {
 
 const LanguageContext = createContext<Language | undefined>(undefined);
 
-export const LanguageProvider = (props: PropsWithChildren) => {
+export const LanguageProvider: FC<PropsWithChildren> = (props) => {
   const { children } = props;
   const {
     i18n: { language },
