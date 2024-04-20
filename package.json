@@ -60,5 +60,12 @@
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
     "vitest": "^1.4.0"
-  }
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "pnpm": ">=9.0.4",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
+  "packageManager": "pnpm@9.0.4"
 }

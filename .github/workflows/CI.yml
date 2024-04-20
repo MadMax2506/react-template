@@ -6,24 +6,24 @@ on:
     branches: [main]
   push:
     paths-ignore:
-      - "public/**"
-      - "index.html"
-      - ".gitignore"
-      - "LICENSE"
-      - "README.md"
+      - 'public/**'
+      - 'index.html'
+      - '.gitignore'
+      - 'LICENSE'
+      - 'README.md'
     branches: [main]
 
 env:
-  NODE_ENV: "development"
-  NODE_OPTIONS: "--max_old_space_size=4096"
+  NODE_ENV: 'development'
+  NODE_OPTIONS: '--max_old_space_size=4096'
 
-jobs:    
+jobs:
   install:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [ 18.x ]
-        pnpm-version: [ 8 ]
+        node-version: [18.x]
+        pnpm-version: [9]
     outputs:
       os: ${{ matrix.os }}
       node-version: ${{ matrix.node-version }}
