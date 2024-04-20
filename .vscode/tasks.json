@@ -18,6 +18,11 @@
     },
     {
       "type": "shell",
+      "label": "Format",
+      "command": "pnpm format"
+    },
+    {
+      "type": "shell",
       "label": "Typecheck",
       "command": "pnpm type:check"
     },
@@ -25,11 +30,6 @@
       "type": "shell",
       "label": "Test",
       "command": "pnpm test"
-    },
-    {
-      "type": "shell",
-      "label": "CI",
-      "command": "pnpm lint:fix && pnpm type:check && pnpm test"
     }
   ]
 }

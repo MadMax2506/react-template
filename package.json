@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix --max-warnings=0",
     "type:check": "tsc --noemit",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --config ./.prettierrc.json --write ./src/**/*.{js,jsx,ts,tsx,css,md,json}"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
