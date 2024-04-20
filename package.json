@@ -68,5 +68,4 @@
     "yarn": "please-use-pnpm"
   },
   "packageManager": "pnpm@9.0.4"
-  }
 }
