@@ -30,8 +30,8 @@ importers:
         specifier: ^1.11.10
         version: 1.11.10
       i18next:
-        specifier: ^23.11.2
-        version: 23.11.2
+        specifier: ^23.11.4
+        version: 23.11.4
       i18next-browser-languagedetector:
         specifier: ^7.2.1
         version: 7.2.1
@@ -58,7 +58,7 @@ importers:
         version: 6.1.0(react@18.2.0)
       react-i18next:
         specifier: ^14.1.0
-        version: 14.1.0(i18next@23.11.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 14.1.0(i18next@23.11.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-router-dom:
         specifier: ^6.23.1
         version: 6.23.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1526,8 +1526,8 @@ packages:
   i18next-http-backend@2.5.1:
     resolution: {integrity: sha512-+rNX1tghdVxdfjfPt0bI1sNg5ahGW9kA7OboG7b4t03Fp69NdDlRIze6yXhIbN8rbHxJ8IP4dzRm/okZ15lkQg==}
 
-  i18next@23.11.2:
-    resolution: {integrity: sha512-qMBm7+qT8jdpmmDw/kQD16VpmkL9BdL+XNAK5MNbNFaf1iQQq35ZbPrSlqmnNPOSUY4m342+c0t0evinF5l7sA==}
+  i18next@23.11.4:
+    resolution: {integrity: sha512-CCUjtd5TfaCl+mLUzAA0uPSN+AVn4fP/kWCYt/hocPUwusTpMVczdrRyOBUwk6N05iH40qiKx6q1DoNJtBIwdg==}
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -3801,7 +3801,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  i18next@23.11.2:
+  i18next@23.11.4:
     dependencies:
       '@babel/runtime': 7.24.4
 
@@ -4150,11 +4150,11 @@ snapshots:
       react-fast-compare: 3.2.2
       react-side-effect: 2.1.2(react@18.2.0)
 
-  react-i18next@14.1.0(i18next@23.11.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-i18next@14.1.0(i18next@23.11.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.24.4
       html-parse-stringify: 3.0.1
-      i18next: 23.11.2
+      i18next: 23.11.4
       react: 18.2.0
     optionalDependencies:
       react-dom: 18.2.0(react@18.2.0)
