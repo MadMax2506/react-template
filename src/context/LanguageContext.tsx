@@ -3,13 +3,9 @@ import 'dayjs/locale/de';
 import 'dayjs/locale/en';
 // END: DONT REMOVE THE FOLLOWING IMPORTS
 import { Localization, deDE as muiMaterialDE, enUS as muiMaterialEN } from '@mui/material/locale';
-import {
-  LocalizationProvider,
-  PickersLocaleText,
-  deDE as muiDatePickersDE,
-  enUS as muiDatePickersEN,
-} from '@mui/x-date-pickers';
+import { LocalizationProvider, PickersLocaleText } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { deDE as muiDatePickersDE, enUS as muiDatePickersEN } from '@mui/x-date-pickers/locales';
 import { LanguageConfiguration, LanguageTag } from '@types';
 import dayjs, { Dayjs } from 'dayjs';
 import { FC, PropsWithChildren, createContext, useContext } from 'react';
