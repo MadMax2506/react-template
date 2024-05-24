@@ -10,8 +10,8 @@ pnpm i
 ```
 
 - Adjust custom settings in `index.html`
-- Adjust app name in `src\context\LanguageContext\locales`
-- Replace `<USER>` and `<PROJECT>` in `src/renderer/components/Todo/TodoLink.tsx` with the related GitHub information
+- Adjust app name in `public\locales\de\common.json` and `public\locales\en\common.json`
+- Replace `<USER>` and `<PROJECT>` in `src\components\Todo\TodoLink.tsx` with the related GitHub information
 
 ## :nut_and_bolt: Starting Development
 
