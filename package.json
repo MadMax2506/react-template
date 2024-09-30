@@ -19,7 +19,7 @@
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
     "@mui/x-date-pickers": "^7.18.0",
-    "@types/lodash": "^4.17.7",
+    "@types/lodash": "^4.17.9",
     "dayjs": "^1.11.13",
     "i18next": "^23.15.1",
     "i18next-browser-languagedetector": "^8.0.0",
